@@ -6,6 +6,7 @@ const initialState = {
  {id: 1, text: 'Learn Redux', completed: false},
  {id: 2, text: 'Build Todo App', completed: false},
  {id: 3, text: 'Master State Management', completed: false},
+ {id: 4, text: 'This stuff is freakin hard', completed: false},
  ],
  filter: 'all', // 'all', 'active', 'completed'
 };

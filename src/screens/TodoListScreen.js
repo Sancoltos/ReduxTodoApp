@@ -15,8 +15,16 @@ import {addTodo, toggleTodo, deleteTodo, setFilter} from '../store/todoSlice';
 const TodoListScreen = () => {
  const dispatch = useDispatch();
  const todos = useSelector(state => state.todos.items);
+  const entireState = useSelector(s => s);
  const filter = useSelector(state => state.todos.filter);
  const [newTodoText, setNewTodoText] = useState('');
+
+React.useEffect(() => {
+    console.log('=================================');
+    console.log('REDUX STATE TREE:');
+    console.log(JSON.stringify(entireState, null, 2));
+    console.log('=================================');
+  });
 
  // Filter todos based on current filter
  const filteredTodos = todos.filter(todo => {
@@ -135,7 +143,7 @@ const styles = StyleSheet.create({
  backgroundColor: '#f8f9fa',
  },
  header: {
- backgroundColor: '#3498db',
+ backgroundColor: '#da4f25ff',
  padding: 20,
  paddingTop: 40,
  },
@@ -156,7 +164,7 @@ const styles = StyleSheet.create({
  padding: 16,
  backgroundColor: 'white',
  borderBottomWidth: 1,
- borderBottomColor: '#e0e0e0',
+ borderBottomColor: '#ffffffff',
  },
  input: {
  flex: 1,
@@ -183,7 +191,7 @@ const styles = StyleSheet.create({
  padding: 16,
  backgroundColor: 'white',
  borderBottomWidth: 1,
- borderBottomColor: '#e0e0e0',
+ borderBottomColor: '#fffefeff',
  },
  filterButton: {
  flex: 1,
